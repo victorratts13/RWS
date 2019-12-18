@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ##########################################################################
-####################### Ratts workStation V1.0 ###########################
+####################### Ratts workStation V1.0.0 #########################
 ##########################################################################
 
 # ----------------------------- VARIÁVEIS ----------------------------- #
@@ -9,6 +9,7 @@
 PPA_LIBRATBAG="ppa:libratbag-piper/piper-libratbag-git"
 PPA_LUTRIS="ppa:lutris-team/lutris"
 PPA_GRAPHICS_DRIVERS="ppa:graphics-drivers/ppa"
+PPA_QBITTORRENT="ppa:qbittorrent-team/qbittorrent-stabl"
 
 URL_WINE_KEY="https://dl.winehq.org/wine-builds/winehq.key"
 URL_VSCODE="https://az764295.vo.msecnd.net/stable/9579eda04fdb3a9bba2750f15193e5fafe16b959/code_1.41.0-1576089540_amd64.deb"
@@ -45,6 +46,11 @@ PROGRAMAS_PARA_INSTALAR=(
   libfreetype6:i386
   libdbus-1-3:i386
   libsqlite3-0:i386
+  qbittorrent
+  zsnes
+  pcsx2
+  nmap
+  zenmap
 )
 # ---------------------------------------------------------------------- #
 
@@ -63,6 +69,7 @@ sudo apt update -y
 sudo apt-add-repository "$PPA_LIBRATBAG" -y
 sudo add-apt-repository "$PPA_LUTRIS" -y
 sudo apt-add-repository "$PPA_GRAPHICS_DRIVERS" -y
+sudo apt-add-repository "$PPA_QBITTORRENT" -y
 wget -nc "$URL_WINE_KEY"
 sudo apt-key add winehq.key
 sudo apt-add-repository "deb $URL_PPA_WINE bionic main"
