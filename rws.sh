@@ -11,6 +11,7 @@ PPA_LUTRIS="ppa:lutris-team/lutris"
 PPA_GRAPHICS_DRIVERS="ppa:graphics-drivers/ppa"
 
 URL_WINE_KEY="https://dl.winehq.org/wine-builds/winehq.key"
+URL_VSCODE="https://az764295.vo.msecnd.net/stable/9579eda04fdb3a9bba2750f15193e5fafe16b959/code_1.41.0-1576089540_amd64.deb"
 URL_PPA_WINE="https://dl.winehq.org/wine-builds/ubuntu/"
 URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 URL_SIMPLE_NOTE="https://github.com/Automattic/simplenote-electron/releases/download/v1.8.0/Simplenote-linux-1.8.0-amd64.deb"
@@ -20,13 +21,13 @@ URL_INSYNC="https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.0.20.40428-bio
 DIRETORIO_DOWNLOADS="$HOME/Downloads/programas"
 
 PROGRAMAS_PARA_INSTALAR=(
+  curl
   snapd
   mint-meta-codecs
   winff
   guvcview
   virtualbox
   flameshot
-  nemo-dropbox
   steam-installer
   steam-devices
   steam:i386
@@ -74,6 +75,7 @@ sudo apt update -y
 ## Download e instalaçao de programas externos ##
 mkdir "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_GOOGLE_CHROME"       -P "$DIRETORIO_DOWNLOADS"
+wget -c "$URL_VSCODE"              -P "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_SIMPLE_NOTE"         -P "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_4K_VIDEO_DOWNLOADER" -P "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_INSYNC"              -P "$DIRETORIO_DOWNLOADS"
@@ -96,10 +98,10 @@ sudo apt install --install-recommends winehq-stable wine-stable wine-stable-i386
 flatpak install flathub com.obsproject.Studio -y
 
 ## Instalando pacotes Snap ##
-sudo snap install spotify
 sudo snap install slack --classic
 sudo snap install skype --classic
-sudo snap install photogimp
+sudo snap install sublime-text-3 --classic --candidate
+sudo snap install krita
 # ---------------------------------------------------------------------- #
 
 # ----------------------------- PÓS-INSTALAÇÃO ----------------------------- #
@@ -109,3 +111,7 @@ flatpak update
 sudo apt autoclean
 sudo apt autoremove -y
 # ---------------------------------------------------------------------- #
+## instalando Docker ##
+
+echo "[INSTALANDO] - DOCKER"
+curl -sSL https://get.docker.com | sh
