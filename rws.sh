@@ -61,6 +61,8 @@ sudo rm /var/cache/apt/archives/lock
 
 ## Adicionando/Confirmando arquitetura de 32 bits ##
 sudo dpkg --add-architecture i386
+#
+sudo dpkg --add-architecture amd64
 
 ## Atualizando o repositório ##
 sudo apt update -y
