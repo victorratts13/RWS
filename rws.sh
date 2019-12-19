@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ##########################################################################
-####################### Ratts workStation V1.0.0 #########################
+####################### Ratts workStation V1.0.2 #########################
 ##########################################################################
 
 # ----------------------------- VARIÁVEIS ----------------------------- #
@@ -10,6 +10,7 @@ PPA_LIBRATBAG="ppa:libratbag-piper/piper-libratbag-git"
 PPA_LUTRIS="ppa:lutris-team/lutris"
 PPA_GRAPHICS_DRIVERS="ppa:graphics-drivers/ppa"
 PPA_QBITTORRENT="ppa:qbittorrent-team/qbittorrent-stabl"
+PPA_AGRY="ppa:upubuntu-com/network"
 
 URL_WINE_KEY="https://dl.winehq.org/wine-builds/winehq.key"
 URL_VSCODE="https://az764295.vo.msecnd.net/stable/9579eda04fdb3a9bba2750f15193e5fafe16b959/code_1.41.0-1576089540_amd64.deb"
@@ -22,9 +23,9 @@ URL_INSYNC="https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.0.20.40428-bio
 DIRETORIO_DOWNLOADS="$HOME/Downloads/programas"
 
 PROGRAMAS_PARA_INSTALAR=(
+  htop
   curl
   snapd
-  mint-meta-codecs
   winff
   guvcview
   virtualbox
@@ -51,6 +52,8 @@ PROGRAMAS_PARA_INSTALAR=(
   pcsx2
   nmap
   zenmap
+  ipscan
+  openssh
 )
 # ---------------------------------------------------------------------- #
 
@@ -72,6 +75,7 @@ sudo apt-add-repository "$PPA_LIBRATBAG" -y
 sudo add-apt-repository "$PPA_LUTRIS" -y
 sudo apt-add-repository "$PPA_GRAPHICS_DRIVERS" -y
 sudo apt-add-repository "$PPA_QBITTORRENT" -y
+sudo apt-add-repository "$PPA_AGRY" -y
 wget -nc "$URL_WINE_KEY"
 sudo apt-key add winehq.key
 sudo apt-add-repository "deb $URL_PPA_WINE bionic main"
